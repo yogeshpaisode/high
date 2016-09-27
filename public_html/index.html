@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+
+</head>
+
+<body>
+        
+    
+<div id="container" style="height: 400px"></div>
+<button id="button" class="autocompare">Add series</button>
+    
+
+<script>
+    
+    $(function () {
+    $('#container').highcharts({
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar']
+        },
+        series: [{
+            data: [29.9, 71.5, 106.4]
+        }]
+    });
+
+    // the button handler
+    $('#button').click(function () {
+        var chart = $('#container').highcharts();
+        if (chart.series.length === 1) {
+            chart.addSeries({
+                data: [194.1, 95.6, 54.4]
+            },false);
+            chart.yog(true);
+        }
+    });
+});
+    
+</script>
+
+    
+</body>
+</html>
