@@ -12050,9 +12050,7 @@
                                     renderer = chart.renderer,
                                     isHiddenChart = renderer.isHidden(),
                                     afterRedraw = [];
-
-                            console.log(axes);
-
+                            
                             setAnimation(animation, chart);
 
                             if (isHiddenChart) {
@@ -12193,14 +12191,7 @@
                         yog: function (animation) {
                             var chart = this,
                                     series = chart.series;
-
-
-
                             setAnimation(animation, chart);
-
-
-                            console.log(series[1]);
-
                             series[series.length-1].redraw();
 
                         },
@@ -15306,6 +15297,8 @@
                                             yAxis = series.yAxis;
 
 
+                                    console.log("From redraw ok:: ",series);
+
                                     // reposition on resize
                                     if (group) {
                                         if (chart.inverted) {
@@ -15320,6 +15313,7 @@
                                             translateY: pick(yAxis && yAxis.top, chart.plotTop)
                                         });
                                     }
+
 
                                     series.translate();
                                     series.render();
